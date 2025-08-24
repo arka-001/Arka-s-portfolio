@@ -77,7 +77,6 @@ WSGI_APPLICATION = 'arka_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -86,9 +85,12 @@ DATABASES = {
         'PASSWORD': 'L]0*hSLFdvvrnakc~Q97',
         'HOST': 'serverless-us-east4.sysp0000.db2.skysql.com',
         'PORT': '4031',
-        # Remove OPTIONS temporarily
+        # 'OPTIONS': {
+        #     'ssl': {'ca': '/path/to/ca-cert.pem'}  # comment out until you upload the cert
+        # },
     }
 }
+
 
 
 
