@@ -86,8 +86,7 @@ DATABASES = {
         'PASSWORD': 'L]0*hSLFdvvrnakc~Q97',
         'HOST': 'serverless-us-east4.sysp0000.db2.skysql.com',
         'PORT': '4031',
-        'OPTIONS': {
-            'ssl': {'ca': '/path/to/ca-cert.pem'}  # optional if SkySQL requires SSL
+       
         },
     }
 }
