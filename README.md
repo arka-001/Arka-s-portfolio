@@ -1,61 +1,231 @@
-Ultra-Modern 3D Neon Portfolio Website
+# Arka Portfolio - Full Stack Portfolio Website
 
-Overview
+A complete portfolio website built with Django REST Framework backend and MySQL database, featuring a comprehensive admin panel for content management.
 
-This is a futuristic, ultra-modern 3D neon-lit portfolio website designed for software engineers. It features dynamic content editable via a Django admin panel, interactive 3D elements, neon effects, and smooth animations.
+## 🚀 Features
 
-The website is built with:
+### Backend Features
+- **Django REST Framework API** - Complete REST API for all portfolio data
+- **MySQL Database** - Robust database with comprehensive schema
+- **Admin Panel** - Full-featured Django admin for content management
+- **Image/File Upload** - Support for profile images, project screenshots, and documents
+- **CORS Support** - Ready for frontend integration
+- **Pagination** - API pagination for better performance
 
-Frontend: Next.js, React, Framer Motion
+### Portfolio Sections
+- **About** - Personal information and social links
+- **Skills** - Technical skills with proficiency levels and categories
+- **Projects** - Portfolio projects with technologies and links
+- **Experience** - Work history and professional experience
+- **Education** - Academic background and qualifications
+- **Services** - Services offered with icons and descriptions
+- **Testimonials** - Client testimonials and reviews
+- **Blog** - Blog posts with categories and tags
+- **Contact** - Contact form for inquiries
 
-Backend: Django + Django REST Framework (DRF)
+## 🛠️ Technology Stack
 
-Database: PostgreSQL / MySQL
+- **Backend**: Django 5.2.5, Django REST Framework 3.16.1
+- **Database**: MySQL
+- **Image Processing**: Pillow
+- **CORS**: django-cors-headers
+- **Python**: 3.13+
 
-Design: Figma prototype with 3D neon effects
+## 📋 Prerequisites
 
-Features
+- Python 3.8+
+- MySQL Server
+- pip (Python package manager)
 
-Dynamic Content: Hero, About, Projects, Testimonials, and Contact sections editable via Django admin.
+## 🔧 Installation & Setup
 
-3D & Neon Effects: Floating shapes, glassmorphism panels, animated particles, hover micro-interactions.
+### 1. Clone the Repository
+```bash
+git clone <your-repo-url>
+cd arka-portfolio
+```
 
-Projects & Skills: Filterable project gallery, interactive skill progress bars.
+### 2. Create Virtual Environment
+```bash
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On macOS/Linux
+source venv/bin/activate
+```
 
-Contact Form: Admin-editable placeholders and backend submission handling.
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-Responsive Design: Works perfectly on desktop, tablet, and mobile.
+### 4. Database Setup
+1. Create MySQL database:
+```sql
+CREATE DATABASE arka_portfolio;
+```
 
-SEO & Analytics: Supports meta tags, Open Graph, and Google Analytics.
+2. Update database settings in `arka_portfolio/settings.py` if needed:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'arka_portfolio',
+        'USER': 'root',
+        'PASSWORD': 'Arka',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
 
-Dark Mode: Futuristic neon dark theme with customizable gradients.Ultra-Modern 3D Neon Portfolio Website
+### 5. Run Migrations
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-Overview
+### 6. Create Superuser
+```bash
+python manage.py createsuperuser
+```
 
-This is a futuristic, ultra-modern 3D neon-lit portfolio website designed for software engineers. It features dynamic content editable via a Django admin panel, interactive 3D elements, neon effects, and smooth animations.
+### 7. Populate Sample Data (Optional)
+```bash
+python manage.py populate_sample_data
+```
 
-The website is built with:
+### 8. Run Development Server
+```bash
+python manage.py runserver
+```
 
-Frontend: Next.js, React, Framer Motion
+## 🌐 Access Points
 
-Backend: Django + Django REST Framework (DRF)
+- **Admin Panel**: http://localhost:8000/admin/
+- **API Root**: http://localhost:8000/api/
+- **API Documentation**: http://localhost:8000/api/
 
-Database: PostgreSQL / MySQL
+## 📚 API Endpoints
 
-Design: Figma prototype with 3D neon effects
+### Available Endpoints
+- `GET /api/about/` - Get personal information
+- `GET /api/skills/` - Get skills list
+- `GET /api/projects/` - Get projects list
+- `GET /api/experience/` - Get work experience
+- `GET /api/education/` - Get education history
+- `POST /api/contact/` - Submit contact form
+- `GET /api/blog/` - Get blog posts
+- `GET /api/testimonials/` - Get testimonials
+- `GET /api/services/` - Get services offered
 
-Features
+### Query Parameters
+- **Skills**: `?category=programming` - Filter by skill category
+- **Projects**: `?featured=true&type=web` - Filter featured projects by type
+- **Blog**: `?search=django&featured=true` - Search and filter blog posts
 
-Dynamic Content: Hero, About, Projects, Testimonials, and Contact sections editable via Django admin.
+### Example API Usage
+```bash
+# Get all skills
+curl http://localhost:8000/api/skills/
 
-3D & Neon Effects: Floating shapes, glassmorphism panels, animated particles, hover micro-interactions.
+# Get featured projects
+curl http://localhost:8000/api/projects/?featured=true
 
-Projects & Skills: Filterable project gallery, interactive skill progress bars.
+# Get programming skills
+curl http://localhost:8000/api/skills/?category=programming
 
-Contact Form: Admin-editable placeholders and backend submission handling.
+# Submit contact form
+curl -X POST http://localhost:8000/api/contact/ \
+  -H "Content-Type: application/json" \
+  -d '{"name":"John Doe","email":"john@example.com","subject":"Inquiry","message":"Hello!"}'
+```
 
-Responsive Design: Works perfectly on desktop, tablet, and mobile.
+## 🎨 Admin Panel Features
 
-SEO & Analytics: Supports meta tags, Open Graph, and Google Analytics.
+### Dashboard Overview
+- **Arka Portfolio Admin** - Custom admin branding
+- **Comprehensive Management** - All portfolio sections manageable
+- **Bulk Actions** - Mark messages as read/unread, publish/unpublish posts
+- **Advanced Filtering** - Filter by status, dates, categories
+- **Inline Editing** - Quick edit capabilities for lists
+- **Media Management** - Upload and manage images/files
 
-Dark Mode: Futuristic neon dark theme with customizable gradients.
+### Content Management
+- **About Section** - Personal info, social links, resume upload
+- **Skills Management** - Add skills with proficiency levels and colors
+- **Project Portfolio** - Create projects with technologies and links
+- **Experience Timeline** - Manage work history and company logos
+- **Education Records** - Academic background and institution logos
+- **Service Offerings** - Define services with icons and descriptions
+- **Client Testimonials** - Manage testimonials with ratings
+- **Blog Management** - Create and publish blog posts
+- **Contact Management** - View and manage contact form submissions
+
+## 📁 Project Structure
+
+```
+arka-portfolio/
+├── arka_portfolio/          # Django project settings
+│   ├── settings.py         # Main settings file
+│   ├── urls.py            # Main URL configuration
+│   └── wsgi.py            # WSGI configuration
+├── portfolio/              # Main portfolio app
+│   ├── models.py          # Database models
+│   ├── views.py           # API views
+│   ├── serializers.py     # API serializers
+│   ├── admin.py           # Admin panel configuration
+│   ├── urls.py            # App URL patterns
+│   └── management/        # Custom management commands
+├── frontend/              # Frontend files (your existing frontend)
+├── static/                # Static files
+├── media/                 # Uploaded media files
+├── manage.py              # Django management script
+└── README.md              # This file
+```
+
+## 🔒 Security Features
+
+- **CORS Configuration** - Properly configured for frontend integration
+- **Input Validation** - Comprehensive form validation
+- **File Upload Security** - Secure file upload handling
+- **Admin Authentication** - Secure admin panel access
+
+## 🚀 Deployment
+
+### Production Setup
+1. Set `DEBUG = False` in settings.py
+2. Configure production database
+3. Set up static file serving
+4. Configure environment variables
+5. Set up web server (nginx + gunicorn)
+
+### Environment Variables
+```bash
+SECRET_KEY=your-secret-key
+DEBUG=False
+ALLOWED_HOSTS=your-domain.com
+DATABASE_URL=mysql://user:password@host:port/database
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 📞 Support
+
+For support and questions:
+- Email: arkamaitra001@gmail.com
+- GitHub: [@arkamaitra](https://github.com/arkamaitra)
+
+---
+
+**Built with ❤️ by Arka Maitra**
