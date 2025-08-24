@@ -224,7 +224,7 @@ This project is licensed under the MIT License.
 
 For support and questions:
 - Email: arkamaitra001@gmail.com
-- GitHub: [@arkamaitra](https://github.com/arkamaitra)
+- 
 
 ---
 
