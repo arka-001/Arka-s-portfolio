@@ -81,14 +81,16 @@ WSGI_APPLICATION = 'arka_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'arka_portfolio',
+        'USER': 'dbpgf30636455',
+        'PASSWORD': 'L]0*hSLFdvvrnakc~Q97',
+        'HOST': 'serverless-us-east4.sysp0000.db2.skysql.com',
+        'PORT': '4031',
+        'OPTIONS': {
+            'ssl': {'ca': '/path/to/ca-cert.pem'}  # optional if SkySQL requires SSL
+        },
     }
 }
-
 
 
 # Password validation
